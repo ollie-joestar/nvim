@@ -49,6 +49,7 @@ require('lazy').setup {
       { '<C-l>' },
     },
   },
+  { 'norcalli/nvim-colorizer.lua' },
   {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
