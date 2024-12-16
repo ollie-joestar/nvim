@@ -24,7 +24,7 @@ require('lazy').setup {
     priority = 1000,
   },
   { 'nvim-lualine/lualine.nvim' },
-  { 'tpope/vim-sleuth' },
+  -- { 'tpope/vim-sleuth' },
   { 'Diogo-ss/42-header.nvim' },
   { 'andweeb/presence.nvim' },
   { 'folke/which-key.nvim' },
@@ -62,8 +62,12 @@ require('lazy').setup {
       require('alpha').setup(startify.config)
     end,
   },
-
-  --
+  { 'tadaa/vimade' },
+  { 'rhysd/conflict-marker.vim' },
+  -- { 'sphamba/smear-cursor.nvim', opts = {
+  --   cursor_color = '#FAD8D2',
+  -- } },
+  -- { 'karb94/neoscroll.nvim' },
   --
   --
   --
@@ -264,7 +268,7 @@ require('lazy').setup {
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = true, cpp = true, h = true, hpp = true }
         local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
           lsp_format_opt = 'never'
