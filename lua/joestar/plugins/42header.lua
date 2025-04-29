@@ -1,4 +1,4 @@
 require('42header').setup {
   user = 'oohnivch',
-  mail = '@student.42vienna.com',
+  mail = 'oohnivch@student.42vienna.com',
 }

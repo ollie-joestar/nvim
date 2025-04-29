@@ -10,7 +10,9 @@ require('nvim-treesitter.configs').setup {
     'rust',
     'scss',
     'yaml',
+    'jsonc',
   },
+  ignore_install = { 'haskell' }, -- List of parsers to ignore installing
   highlight = {
     enable = true,
   },

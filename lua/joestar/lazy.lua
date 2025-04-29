@@ -18,10 +18,23 @@ require('lazy').setup {
     },
   },
   { 'nvim-treesitter/nvim-treesitter' },
+  -- Devcontainer test
+  { 'https://codeberg.org/esensar/nvim-dev-container' },
+  -- Diffview
+  { 'sindrets/diffview.nvim' },
+  -- {
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   priority = 1000,
+  -- },
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
+    'rebelot/kanagawa.nvim',
+  },
+  {
+    'nvzone/typr',
+    dependencies = 'nvzone/volt',
+    opts = {},
+    cmd = { 'Typr', 'TyprStats' },
   },
   { 'nvim-lualine/lualine.nvim' },
   -- { 'tpope/vim-sleuth' },
@@ -64,10 +77,6 @@ require('lazy').setup {
   },
   { 'tadaa/vimade' },
   { 'rhysd/conflict-marker.vim' },
-  -- { 'sphamba/smear-cursor.nvim', opts = {
-  --   cursor_color = '#FAD8D2',
-  -- } },
-  -- { 'karb94/neoscroll.nvim' },
   --
   --
   --
@@ -176,7 +185,7 @@ require('lazy').setup {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = { '/sgoinfre/oohnivch/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer' },
+        -- rust_analyzer = { '/sgoinfre/oohnivch/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer' },
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
@@ -215,12 +224,15 @@ require('lazy').setup {
       })
       require('mason-lspconfig').setup {
         { PATH = 'append' },
+        ensure_installed = {
+          'clangd',
+        },
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig').rust_analyzer.setup {
-              cmd = { '/sgoinfre/oohnivch/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer' },
+              -- cmd = { '/sgoinfre/oohnivch/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer' },
               -- handlers = handlers,
               settings = {
                 ['rust-analyzer'] = {

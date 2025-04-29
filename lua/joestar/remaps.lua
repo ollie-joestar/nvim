@@ -46,7 +46,7 @@ vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<CR>")', {
   silent = true,
   replace_keycodes = false,
 })
-vim.keymap.set('i', '<C-Space>', 'copilot-accept-word', {
+vim.keymap.set('i', '<S-Space>', 'copilot-accept-word', {
   expr = true,
   silent = true,
   replace_keycodes = false,
