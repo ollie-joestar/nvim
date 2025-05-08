@@ -19,7 +19,7 @@ require('lazy').setup {
   },
   { 'nvim-treesitter/nvim-treesitter' },
   -- Devcontainer test
-  { 'https://codeberg.org/esensar/nvim-dev-container' },
+  -- { 'https://codeberg.org/esensar/nvim-dev-container' },
   -- Diffview
   { 'sindrets/diffview.nvim' },
   -- {
@@ -62,7 +62,12 @@ require('lazy').setup {
       { '<C-l>' },
     },
   },
-  { 'norcalli/nvim-colorizer.lua' },
+  {
+    'catgoose/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    opts = { -- set to setup table
+    },
+  },
   {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
