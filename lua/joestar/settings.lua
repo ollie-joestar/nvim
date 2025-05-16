@@ -1,59 +1,73 @@
-vim.g.copilot_no_tab_map = true
--- See `:help vim.opt`
-vim.opt.guicursor = ''
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 0
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
-
-vim.opt.smartindent = true
-vim.opt.wrap = true
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.g.netrw_liststyle = 3
-vim.g.netrw_banner = 0
+-- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+-- See `:help vim.opt`
+-- Make fat cursor
+vim.o.guicursor = ''
+-- Make line numbers default
+vim.o.number = true
+-- Show relative numbers
+vim.o.relativenumber = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 0
+vim.o.shiftwidth = 4
+vim.o.expandtab = false
 
-vim.opt.mouse = 'a'
-vim.opt.showmode = false
+vim.o.smartindent = true
+vim.o.wrap = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
+
+-- Show filetree with depth
+vim.g.netrw_liststyle = 3
+-- Remove filetree top banner
+vim.g.netrw_banner = 0
+
+-- Keep signcolumn on by default
+vim.o.signcolumn = 'yes'
+
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.o.mouse = 'a'
+-- Don't show the mode, since it's already in the status line
+vim.o.showmode = false
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamedplus'
 end)
 -- Enable break indent
-vim.opt.breakindent = true
+vim.o.breakindent = true
 -- Save undo history
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
-vim.opt.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
--- Keep signcolumn on by default [yes]
-vim.opt.signcolumn = 'no'
+vim.o.ignorecase = true
+vim.o.smartcase = true
 -- Decrease update time
-vim.opt.updatetime = 50
+vim.o.updatetime = 50
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.o.timeoutlen = 300
 -- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
--- vim.opt.list = true
--- vim.opt.listchars = { tab = ' ', trail = '·', nbsp = '␣' }
+--
+--  Notice listchars is set using `vim.opt` instead of `vim.o`.
+--  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+--   See `:help lua-options`
+--   and `:help lua-options-guide`
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.o.inccommand = 'split'
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.o.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
-
+vim.o.scrolloff = 12
+-- Disable copilot tab mapping
+vim.g.copilot_no_tab_map = true
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),

@@ -1,5 +1,5 @@
 require('colorizer').setup {
-  filetypes = { '*' }, -- Filetype options.  Accepts table like `user_default_options`
+  filetypes = { '*', '!.xpm' }, -- Filetype options.  Accepts table like `user_default_options`
   -- Boolean | List of usercommands to enable.  See User commands section.
   user_default_options = {
     names = false,
