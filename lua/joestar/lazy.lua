@@ -22,6 +22,8 @@ require('lazy').setup {
   -- { 'https://codeberg.org/esensar/nvim-dev-container' },
   -- Diffview
   { 'sindrets/diffview.nvim' },
+  -- Git blame
+  { 'f-person/git-blame.nvim' },
   -- {
   --   'catppuccin/nvim',
   --   name = 'catppuccin',

@@ -8,6 +8,7 @@
   "copilot.vim": { "branch": "release", "commit": "d1e8429bef7f7709586886b0a23a46fbecc685c4" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "fidget.nvim": { "branch": "main", "commit": "d9ba6b7bfe29b3119a610892af67602641da778e" },
+  "git-blame.nvim": { "branch": "master", "commit": "8503b199edf9a666fe7b1a989cf14e3c26b2eb03" },
   "gitsigns.nvim": { "branch": "main", "commit": "e399f9748d7cfd8859747c8d6c4e9c8b4d50a1bd" },
   "kanagawa.nvim": { "branch": "master", "commit": "4de88d695634a8776c687af8e7436cfa074aa0c0" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
