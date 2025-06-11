@@ -47,6 +47,7 @@ require('which-key').setup {
       { '<leader>t', group = '[T]oggle' },
       { '<leader>p', group = '[P]revious' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      { '<leader>m', group = '[M]arkdown', mode = { 'n', 'v' } },
     },
   },
 }

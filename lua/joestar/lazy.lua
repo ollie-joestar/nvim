@@ -61,6 +61,36 @@ require('lazy').setup {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = { signs = false },
   },
+  { 'karb94/neoscroll.nvim' },
+  -- {
+  --   'epwalsh/obsidian.nvim',
+  --   name = 'obsidian',
+  --   lazy = true,
+  --   ft = 'markdown',
+  --   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+  --   -- event = {
+  --   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+  --   --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+  --   --   -- refer to `:h file-pattern` for more examples
+  --   --   "BufReadPre path/to/my-vault/*.md",
+  --   --   "BufNewFile path/to/my-vault/*.md",
+  --   -- },
+  --   dependencies = {
+  --     -- Required.
+  --     'nvim-lua/plenary.nvim',
+  --     'hrsh7th/nvim-cmp', -- if you want to use completion
+  --     -- see below for full list of optional dependencies 👇
+  --   },
+  -- },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
   {
     'christoomey/vim-tmux-navigator',
     lazy = true,
@@ -185,6 +215,8 @@ require('lazy').setup {
             mode = mode or 'n'
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
+
+          -- map('<leader>ogf', require('obsidian').util.gf_passthrough(), '[O]bsidian [G]o [F]ile', { 'n', 'x' })
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
