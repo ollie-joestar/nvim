@@ -32,6 +32,7 @@ require('lazy').setup {
   {
     'rebelot/kanagawa.nvim',
   },
+  -- Typing practice
   {
     'nvzone/typr',
     dependencies = 'nvzone/volt',
