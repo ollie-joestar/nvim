@@ -75,3 +75,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+-- Disable the default filetype plugin
+vim.o.conceallevel = 1
