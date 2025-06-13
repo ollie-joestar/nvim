@@ -17,3 +17,25 @@ require 'joestar'
 require 'joestar.settings'
 require 'joestar.remaps'
 require 'joestar.lazy'
+-- require('joestar.settings').max()
+-- require('joestar.settings').dark()
+
+vim.api.nvim_create_user_command('MaxHere', function()
+  require('joestar.plugins.kanagawa').max()
+end, {})
+
+vim.api.nvim_create_user_command('DarkHere', function()
+  require('joestar.plugins.kanagawa').dark()
+end, {})
+
+vim.api.nvim_create_user_command('NormalHere', function()
+  require('joestar.plugins.kanagawa').normal()
+end, {})
+
+vim.api.nvim_create_user_command('Waifu', function()
+  require('joestar.plugins.kanagawa').waifu()
+end, {})
+
+vim.api.nvim_create_user_command('Maidenless', function()
+  require('joestar.plugins.kanagawa').maidenless()
+end, {})
