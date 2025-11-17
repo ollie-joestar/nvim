@@ -77,3 +77,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 -- Disable the default filetype plugin
 vim.o.conceallevel = 1
+
+vim.o.foldmethod = 'syntax'
+vim.o.foldlevelstart = 99

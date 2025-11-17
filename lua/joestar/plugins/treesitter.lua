@@ -19,6 +19,11 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true,
   },
+  fold = {
+    enable = true,
+    method = 'expr',
+    expr = 'nvim_treesitter#foldexpr()',
+  },
   sync_install = false,
   auto_install = true,
 }
